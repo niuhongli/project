@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+	<button>1 </button><span></span>
+	<button>2 </button><span></span>
+	<button>3 </button><span></span>
+	<button>4 </button><span></span>
+	</div>	
+</body>
+</html>
+<script>
+//某一年有都少周
+function count(y){
+	let week=new Date(y+"1/1").getDay()//1月的第一天是星期几
+	//console.log(week)
+	//判断今年是平年还是瑞年
+	let num,days;
+	if(y%4==0&&y%100!=0 ||y%400==0){
+		days=366;
+	}else{
+		days=365;
+	}
+	if(week==1){
+		num=Math.ceil(days/7)
+	}else if(week==0){
+		num=Math.ceil(days/7)+1
+	}else{
+		num=Math.ceil((days-(7-week+1))/7)+1
+	}
+	console.log(num)
+}
+count(2017)
+/*var btn = document.querySelectorAll('button')
+	var span = document.querySelectorAll('span')
+	var k = 0;
+	for (var i = 0; i < btn.length;i++) {
+		btn[i].index = i
+		btn[i].onclick = function(){
+			k = span[this.index].innerHTML;
+			k++;
+			span[this.index].innerHTML=k
+		}
+	}*/
+		/*let btn=document.querySelectorAll("button");
+		let div=document.querySelector("div");
+		for(let i=0;i<btn.length;i++){
+			btn[i].onclick=function(){
+				
+					let spa=document.createElement('span');
+					spa.innerHTML=1;
+					this.parentNode.insertBefore(spa)
+			}
+		}*/
+			/*var count=0;
+			function num(){
+				count++;
+				console.log(count)
+			}
+			num()
+			num()
+			num()*/
+
+			/*function num(){
+				var count=0;
+				count++;
+				console.log(count)
+			}
+			num()
+			num()
+			num()*/
+			/*var a=0;
+			setTimeout(function(){
+				console.log(a)
+			},0);
+			console.log(a++)*/
+
+			/*for(var i=0;i<4;i++){
+				console.log(i)
+			}*/
+	</script>
